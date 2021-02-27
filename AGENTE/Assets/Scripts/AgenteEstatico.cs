@@ -30,6 +30,7 @@ public class AgenteEstatico : MonoBehaviour
     public Vector3[] angles;        //Un arreglo de vectores que guarda los angulos que debe pasar el agente
     public int angleIndex;          //Una variable para recorrer el arreglo uno por uno
     public GameObject prefabSphere;
+    public GameObject targetOdj;
     public Transform canon;
 
     //Declaración de los estados que tendrá el agente para su ejecución
@@ -40,6 +41,8 @@ public class AgenteEstatico : MonoBehaviour
     // Este metodo se manda llamar cuando se ejecuta el proyecto
     void Start()
     {
+        targetOdj = GameObject.FindGameObjectWithTag("player");
+
         TransitionToState(idleState); //Su primer estado es el Idle
     }
 

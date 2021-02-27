@@ -16,5 +16,14 @@ public class Sphere : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward* Time.deltaTime *speed);
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Impacto con jugador");
+            Destroy(this.gameObject);
+        }
     }
 }
